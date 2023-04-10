@@ -14,7 +14,7 @@ function App() {
     <div className="App">
       <h2>Let's get started!</h2>
       {expenses.map((element)=>{
-        return<ExpenseItem title={element.title} amount={element.amount} date={element.date}location={element.location}/>
+        return<ExpenseItem key={Math.random()} title={element.title} amount={element.amount} date={element.date}location={element.location}/>
       })}
  
       

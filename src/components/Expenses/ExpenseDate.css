@@ -1,6 +1,8 @@
 .expense-date{
     display: flex;
     flex-direction: column;
+ 
+    gap: 0.2rem;
     width: 5.5rem;
     height: 5.5rem;
     border:1px solid #ececec;
@@ -14,4 +16,12 @@
 .expense-date_month{
     font-style: 0.75rem;
     font-weight: bold;
+}
+.expense-date__year{
+    font-size: 1rem;
+    font-weight: 200;
+}
+.expense-date__day{
+    font-size: 1.3rem;
+    font-weight: 700;
 }

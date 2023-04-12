@@ -1,39 +1,49 @@
 
 import { useState } from 'react';
 import './ExpenseForm.css'
-const ExpenseForm = () => {
+const ExpenseForm = (props) => {
 
-const [userInput, setUserInput] = useState({
-    enteredTitle:"",
-    enteredAmount:"",
-    enteredDate:""
-});
+const [enteredTitle, setEnteredTitle] = useState("")
+const [enteredDate, setEnteredDate] = useState("")
+const [enteredAmount, setEnteredAmount] = useState("")
+
 const handleSubmit=(e)=>{
     e.preventDefault()
-        console.log(userInput)
+   
+        let inputFields={
+          title:enteredTitle,
+          amount:enteredAmount,
+          date:enteredDate
+        }
+        // console.log(inputFields)
+        props.onSaveExpenseData(inputFields);
+        props.addExpense(inputFields);
+        setEnteredTitle("");
+        setEnteredDate("");
+        setEnteredAmount("")
 }
   
     const handleTitleChange=(e)=>{
-        setUserInput({...userInput,enteredTitle:e.target.value});
+      setEnteredTitle(e.target.value);
         // console.log(e.target.value);
     }
     const handleDateChange=(e)=>{
-        setUserInput({...userInput,enteredDate:e.target.value});
+      setEnteredDate(e.target.value);
         // console.log(e.target.value);
     }
     const handleAmountChange=(e)=>{
-        setUserInput({...userInput,enteredAmount:e.target.value});
+      setEnteredAmount(e.target.value);
         // console.log(e.target.value);
     }
   return (
     <div className='expense-form'>
       <form className='expense-form-form' action="">
         <label htmlFor="title">Title</label>
-        <input type="text"  placeholder="enter the title" onChange={handleTitleChange} name='enteredtitle'/>
+        <input type="text"  placeholder="enter the title" value={enteredTitle} onChange={handleTitleChange} name='enteredtitle'/>
         <label htmlFor="date">Date</label>
-        <input type="date"  placeholder="enter date" onChange={handleDateChange} name='entereddate'/>
+        <input type="date"  placeholder="enter date" value={enteredDate} onChange={handleDateChange} name='entereddate'/>
         <label htmlFor="amount">Amount</label>
-        <input type="text"  placeholder="enter the amount" onChange={handleAmountChange}/>
+        <input type="text"  placeholder="enter the amount" value={enteredAmount} onChange={handleAmountChange}/>
         <button  className='expenseform-addBtn' onClick={handleSubmit} name='enteredamount'>Submit</button>
       </form>
     

@@ -1,0 +1,13 @@
+.expense-form-form{
+    display: flex;
+    flex-direction: row;
+    padding: 1rem;
+    gap: 1rem;
+    margin-right: 2rem;
+    background-color: aqua;
+    width:100%;
+}
+.expenseform-addBtn{
+    padding:0.5 1rem;
+    width: 100px;
+}

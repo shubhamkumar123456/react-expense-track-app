@@ -1,5 +1,6 @@
 
 import './App.css';
+import ExpenseForm from './components/Expenses/ExpenseForm';
 import ExpenseItem from './components/Expenses/ExpenseItem';
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
   return (
     <div className="App">
       <h2>Let's get started!</h2>
+      <div className='app-expense-form'><ExpenseForm/></div>
       <div className='App-expenses'>
       {expenses.map((element)=>{
         return<ExpenseItem key={Math.random()} title={element.title} amount={element.amount} date={element.date}/>

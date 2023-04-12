@@ -3,21 +3,27 @@ import { useState } from 'react';
 import './ExpenseForm.css'
 const ExpenseForm = () => {
 
-const [enteredtitle, setenteredTitle] = useState("");
-const [enteredamount, setenteredAmount] = useState("");
-const [entereddate, setenteredDate] = useState("");
+const [userInput, setUserInput] = useState({
+    enteredTitle:"",
+    enteredAmount:"",
+    enteredDate:""
+});
+const handleSubmit=(e)=>{
+    e.preventDefault()
+        console.log(userInput)
+}
   
     const handleTitleChange=(e)=>{
-        setenteredTitle(e.target.value)
-        console.log(e.target.value);
+        setUserInput({...userInput,enteredTitle:e.target.value});
+        // console.log(e.target.value);
     }
     const handleDateChange=(e)=>{
-        setenteredDate(e.target.value)
-        console.log(e.target.value);
+        setUserInput({...userInput,enteredDate:e.target.value});
+        // console.log(e.target.value);
     }
     const handleAmountChange=(e)=>{
-        setenteredAmount(e.target.value)
-        console.log(e.target.value);
+        setUserInput({...userInput,enteredAmount:e.target.value});
+        // console.log(e.target.value);
     }
   return (
     <div className='expense-form'>
@@ -28,7 +34,7 @@ const [entereddate, setenteredDate] = useState("");
         <input type="date"  placeholder="enter date" onChange={handleDateChange} name='entereddate'/>
         <label htmlFor="amount">Amount</label>
         <input type="text"  placeholder="enter the amount" onChange={handleAmountChange}/>
-        <button  className='expenseform-addBtn' name='enteredamount'>Add</button>
+        <button  className='expenseform-addBtn' onClick={handleSubmit} name='enteredamount'>Submit</button>
       </form>
     
     </div>

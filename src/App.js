@@ -8,7 +8,7 @@ import ExpenseFilter from './components/Expenses/ExpenseFilter';
 function App() {
   const [filteredYear, setfilteredYear] = useState('2020');
   const expenses=[
-    {id:'e1',title:'Car Insurance',amount:294.67,date:new Date(2023,4,10),location:"delhi"},
+    {id:'e1',title:'Car Insurance',amount:294.67,date:new Date(2020,4,10),location:"delhi"},
     {id:'e2',title:'Movie',amount:180,date:new Date(2023,4,8),location:"lucknow"},
     {id:'e3',title:'Shopping',amount:1000,date:new Date(2023,4,5),location:"kanpur"},
     {id:'e4',title:'Apple',amount:500,date:new Date(2023,4,1),location:"bihar"},
@@ -16,7 +16,9 @@ function App() {
   ]
   const [expenses1, setexpenses1] = useState(expenses);
   // const [arr, setArr] = useState(false);
-  
+  const filteredExpenses=expenses1.filter(expense=>{
+    return expense.date.getFullYear().toString()===filteredYear
+  })
 
   const saveExpenseDataHandler = (enteredExpenseData) => {
     const inputFields={
@@ -50,8 +52,9 @@ function App() {
       
       </div>
       <div className='App-expenses'>
+   
       
-      {expenses1.map((element)=>{
+      {filteredExpenses.map((element)=>{
         return<ExpenseItem key={Math.random()} title={element.title} amount={element.amount} date={element.date}/>
       })}
       </div>

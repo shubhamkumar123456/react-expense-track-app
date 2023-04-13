@@ -13,7 +13,7 @@ const handleSubmit=(e)=>{
         let inputFields={
           title:enteredTitle,
           amount:enteredAmount,
-          date:enteredDate
+          date:new Date(enteredDate) 
         }
         // console.log(inputFields)
         props.onSaveExpenseData(inputFields);

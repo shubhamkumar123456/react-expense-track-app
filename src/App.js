@@ -30,7 +30,7 @@ function App() {
 
    const addExpenseHandler=(expense)=>{
     // console.log("in app.js")
-    setexpenses1([...expenses1,expense])
+    setexpenses1([expense,...expenses1])
    }
   //  console.log(expenses1)
 
@@ -47,6 +47,7 @@ function App() {
       <div className='app-expense-form'>
         <ExpenseForm onSaveExpenseData={saveExpenseDataHandler} addExpense={addExpenseHandler}/>
         <ExpenseFilter selected={filteredYear} onChangeFilter={filterChangesHandler}/>
+      
       </div>
       <div className='App-expenses'>
       

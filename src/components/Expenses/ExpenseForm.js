@@ -37,7 +37,7 @@ const handleSubmit=(e)=>{
     }
   return (
     <div className='expense-form'>
-      <form className='expense-form-form' action="">
+      <form  className='expense-form-form' action="">
         <label htmlFor="title">Title</label>
         <input type="text"  placeholder="enter the title" value={enteredTitle} onChange={handleTitleChange} name='enteredtitle'/>
         <label htmlFor="date">Date</label>

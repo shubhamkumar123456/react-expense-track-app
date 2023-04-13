@@ -1,11 +1,16 @@
+.expense-form{
+    padding: 1rem;
+    border-radius: 20px;
+  
+}
 .expense-form-form{
     display: flex;
     flex-direction: row;
     padding: 1rem;
-    gap: 1rem;
-    margin-right: 2rem;
-    background-color: aqua;
-    width:100%;
+    gap:0.5rem;
+    background-color:grey;
+   
+ 
 }
 .expenseform-addBtn{
     padding:0.5 1rem;

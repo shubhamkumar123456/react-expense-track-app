@@ -5,8 +5,15 @@
     width: 60%;
     margin: auto;
 }
+
 .app-expense-form{
-    width: 60%;
+    display: flex;
+  
     margin: auto;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    border-radius: 20px;
+    margin-bottom: 10px;
    
 }

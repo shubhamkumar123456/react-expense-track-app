@@ -4,6 +4,7 @@ import './App.css';
 import ExpenseForm from './components/Expenses/ExpenseForm';
 import ExpenseItem from './components/Expenses/ExpenseItem';
 import ExpenseFilter from './components/Expenses/ExpenseFilter';
+import ExpensesList from './components/Expenses/ExpensesList';
 
 function App() {
   const [filteredYear, setfilteredYear] = useState('2020');
@@ -15,7 +16,7 @@ function App() {
    
   ]
   const [expenses1, setexpenses1] = useState(expenses);
-  // const [arr, setArr] = useState(false);
+
   const filteredExpenses=expenses1.filter(expense=>{
     return expense.date.getFullYear().toString()===filteredYear
   })
@@ -25,16 +26,11 @@ function App() {
       ...enteredExpenseData,
       id:Math.random().toString
     }
-    // console.log(inputFields)
-    // expenses.push(inputFields)
-    // console.log(expenses)
-   }
+     }
 
    const addExpenseHandler=(expense)=>{
-    // console.log("in app.js")
     setexpenses1([expense,...expenses1])
    }
-  //  console.log(expenses1)
 
   const filterChangesHandler=(selectedYear)=>{
 
@@ -52,11 +48,12 @@ function App() {
       
       </div>
       <div className='App-expenses'>
-   
-      
-      {filteredExpenses.map((element)=>{
+        <ExpensesList items={filteredExpenses}/>
+    {/* {filteredExpenses.length ===0 && <p style={{color:"white"}}>No expenses found.</p>}
+      {filteredExpenses.length > 0 &&  filteredExpenses.map((element)=>{
         return<ExpenseItem key={Math.random()} title={element.title} amount={element.amount} date={element.date}/>
-      })}
+      })} */}
+
       </div>
     
  

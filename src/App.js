@@ -44,10 +44,11 @@ function App() {
     
       <div className='app-expense-form'>
         <ExpenseForm onSaveExpenseData={saveExpenseDataHandler} addExpense={addExpenseHandler}/>
-        <ExpenseFilter selected={filteredYear} onChangeFilter={filterChangesHandler}/>
+       
       
       </div>
       <div className='App-expenses'>
+      <ExpenseFilter selected={filteredYear} onChangeFilter={filterChangesHandler}/>
         <ExpensesList items={filteredExpenses}/>
     {/* {filteredExpenses.length ===0 && <p style={{color:"white"}}>No expenses found.</p>}
       {filteredExpenses.length > 0 &&  filteredExpenses.map((element)=>{

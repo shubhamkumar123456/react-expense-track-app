@@ -1,4 +1,14 @@
-.Expense-filter{
+.Expense-filter__control{
     background-color: grey;
     padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+.Expense-filter__control label{
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+.Expense-filter__control .select{
+    padding: 0 1rem;
+    font-size:medium;
 }

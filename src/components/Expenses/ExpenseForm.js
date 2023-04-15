@@ -35,9 +35,39 @@ const handleSubmit=(e)=>{
       setEnteredAmount(e.target.value);
         // console.log(e.target.value);
     }
+
+    const [isActive, setActive] = useState("false");
+    const [isForm, setisForm] = useState("true");
+    const [isCancel, setisCancel] = useState("true");
+    const ToggleClass = (e) => {
+      e.preventDefault();
+        setActive(!isActive); 
+     
+      
+      setisForm(!isForm);
+ 
+     };
+
+     const cancelHandle=(e)=>{
+      e.preventDefault();
+      if(isCancel===true){
+        setisCancel(false)
+        setisForm(false)
+        
+      }
+      else{
+        setisCancel(true)
+        setisForm(true)
+        setActive(true)
+      }
+     }
+     console.log(isCancel)
   return (
     <div className='expense-form'>
-      <form  className='expense-form-form' action="">
+
+      <button onClick={ToggleClass} className={isActive ? "activebtn" : "nullbtn"}>Add New Expenses</button>
+    <div className={isForm ? "activeform" : "nullform"}>
+    <form  className='expense-form-form' action="">
         <label htmlFor="title">Title</label>
         <input type="text"  placeholder="enter the title" value={enteredTitle} onChange={handleTitleChange} name='enteredtitle'/>
         <label htmlFor="date">Date</label>
@@ -45,7 +75,9 @@ const handleSubmit=(e)=>{
         <label htmlFor="amount">Amount</label>
         <input type="text"  placeholder="enter the amount" value={enteredAmount} onChange={handleAmountChange}/>
         <button  className='expenseform-addBtn' onClick={handleSubmit} name='enteredamount'>Submit</button>
+        <button onClick={cancelHandle} className={isCancel ? "activeCancel" : "nullCancel"}>Cancel</button>
       </form>
+    </div>
     
     </div>
   )

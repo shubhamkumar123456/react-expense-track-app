@@ -5,6 +5,7 @@
 .expense-form-form {
   display: flex;
   flex-direction: row;
+  align-items: center;
   padding: 1rem;
   gap: 0.5rem;
   background-color: grey;
@@ -24,4 +25,17 @@
 }
 .nullbtn {
   display: none;
+}
+.expense-form button{
+  padding: 0.5rem;
+  border-radius: 10px;
+  /* box-shadow: 0 0 5px 2px white; */
+  font-weight: 600;
+  border:none;
+  cursor: pointer;
+}
+.expense-form-form input{
+  border-radius: 10px;
+  border: none;
+  padding: 0.5rem;
 }

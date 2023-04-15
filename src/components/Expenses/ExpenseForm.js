@@ -45,20 +45,22 @@ const handleSubmit=(e)=>{
      
       
       setisForm(!isForm);
- 
+      setisCancel(false)
      };
 
      const cancelHandle=(e)=>{
       e.preventDefault();
       if(isCancel===true){
         setisCancel(false)
+        setisCancel(false)
         setisForm(false)
         
       }
       else{
         setisCancel(true)
-        setisForm(true)
+      
         setActive(true)
+        setisForm(true)
       }
      }
      console.log(isCancel)

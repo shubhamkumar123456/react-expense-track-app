@@ -5,6 +5,7 @@ import ExpenseForm from './components/Expenses/ExpenseForm';
 import ExpenseItem from './components/Expenses/ExpenseItem';
 import ExpenseFilter from './components/Expenses/ExpenseFilter';
 import ExpensesList from './components/Expenses/ExpensesList';
+import ExpensesChart from './components/Expenses/ExpensesChart';
 
 function App() {
   const [filteredYear, setfilteredYear] = useState('2020');
@@ -47,8 +48,10 @@ function App() {
        
       
       </div>
+      
       <div className='App-expenses'>
       <ExpenseFilter selected={filteredYear} onChangeFilter={filterChangesHandler}/>
+      <ExpensesChart expenses={filteredExpenses}/>
         <ExpensesList items={filteredExpenses}/>
     {/* {filteredExpenses.length ===0 && <p style={{color:"white"}}>No expenses found.</p>}
       {filteredExpenses.length > 0 &&  filteredExpenses.map((element)=>{
